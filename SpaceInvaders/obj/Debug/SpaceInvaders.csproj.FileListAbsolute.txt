@@ -1,0 +1,11 @@
+E:\dabia\clonao\clonei\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+E:\dabia\clonao\clonei\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+E:\dabia\clonao\clonei\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.AssemblyReference.cache
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.SuggestedBindingRedirects.cache
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.Form1.resources
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.Properties.Resources.resources
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.GenerateResource.cache
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+E:\dabia\clonao\clonei\SpaceInvaders\obj\Debug\SpaceInvaders.pdb

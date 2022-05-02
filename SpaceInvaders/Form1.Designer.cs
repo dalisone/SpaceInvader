@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pbNave = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNave)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pbNave
+            // 
+            this.pbNave.Location = new System.Drawing.Point(342, 372);
+            this.pbNave.Name = "pbNave";
+            this.pbNave.Size = new System.Drawing.Size(100, 50);
+            this.pbNave.TabIndex = 0;
+            this.pbNave.TabStop = false;
             // 
             // Form1
             // 
@@ -36,13 +46,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbNave);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbNave)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pbNave;
     }
 }
 
