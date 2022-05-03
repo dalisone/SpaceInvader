@@ -1,13 +1,39 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SpaceInvaders
 {
-    internal class Nave : Sprites
+    public class Nave : Sprite
     {
+       
+        public Nave(float PosX, float PosY, float VelX, float VelY, int SizeX, int SizeY)
+        {
+            this.PosX = PosX;
+            this.PosY = PosY;
+            this.VelX = VelX;
+            this.VelY = VelY;
+            this.SizeX = SizeX;
+            this.SizeY = SizeY;
+            this.Image = new Image[] {Properties.Resources.nave };
+        }
+        
+        
+
+
+        public void Left()
+        {
+            VelX = -15;
+        }
+
+        public void Right()
+        {
+            VelX = 15;
+        }
 
     }
 }

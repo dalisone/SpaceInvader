@@ -13,13 +13,9 @@ namespace SpaceInvaders
     public partial class Form1 : Form
     {
 
-        Bitmap bmp = null;
-        Graphics g = null;
         Timer tm = new Timer();
-        
 
-        int dx = 5;
-        Image navinha = Properties.Resources.nave;
+        Nave navinha = new Nave(0, 0, 0, 0, 100,100);
         public Form1()
         {
             InitializeComponent();
@@ -35,34 +31,51 @@ namespace SpaceInvaders
 
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Escape:
-                    Application.Exit();
-                    break;
-                case Keys.Left:
-                    dx--;
-                    break;
-                case Keys.Right:
-                    dx++;
-                    break;
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            tm.Interval = 25;
-            bmp = new Bitmap(pbNave.Width, pbNave.Height);
 
-            g = Graphics.FromImage(bmp);
+            pbNave.Image = new Bitmap(pbNave.Width, pbNave.Height);
+
+            Bitmap bmp = pbNave.Image as Bitmap;
+            Graphics g = Graphics.FromImage(bmp);
+
+
+            navinha.PosX = (this.Width / 2) - 50;
+            navinha.PosY = this.Height - 100;
+
+            tm.Interval = 15;
 
             tm.Tick += delegate
             {
-                pbNave.Image = navinha;
+                g.Clear(Color.Black);
+                navinha.Colisao(pbNave);
+                navinha.Draw(pbNave, g);
+                pbNave.Refresh();
             };
             tm.Start();
+
+        }
+
+        private void ReadKey(object sender, KeyEventArgs e)
+        {
+            var KeyPress = e.KeyCode;
+            if (e.KeyCode == Keys.Escape)
+            {
+                Application.Exit();
+                return;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                navinha.Right();
+                navinha.Move();
+                return;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                navinha.Left();
+                navinha.Move();
+                return;
+            }
         }
     }
 }

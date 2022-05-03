@@ -34,9 +34,10 @@
             // 
             // pbNave
             // 
-            this.pbNave.Location = new System.Drawing.Point(342, 372);
+            this.pbNave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbNave.Location = new System.Drawing.Point(0, 0);
             this.pbNave.Name = "pbNave";
-            this.pbNave.Size = new System.Drawing.Size(100, 50);
+            this.pbNave.Size = new System.Drawing.Size(800, 450);
             this.pbNave.TabIndex = 0;
             this.pbNave.TabStop = false;
             // 
@@ -50,6 +51,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReadKey);
             ((System.ComponentModel.ISupportInitialize)(this.pbNave)).EndInit();
             this.ResumeLayout(false);
 
