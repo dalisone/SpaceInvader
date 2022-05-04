@@ -16,6 +16,10 @@ namespace SpaceInvaders
         Timer tm = new Timer();
 
         Nave navinha = new Nave(0, 0, 0, 0, 100,100);
+        Inimigo inimiguinho = new Inimigo(0, 0, 0, 0, 100, 100);
+        Inimigo inimiguinho2 = new Inimigo(55, 0, 0, 0, 100, 100);
+        List<Inimigo> inimiguinhos = new List<Inimigo>();
+  
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace SpaceInvaders
             KeyPreview = true;
 
             pbNave.Dock = DockStyle.Fill;
-            
+
             Controls.Add(pbNave);
 
         }
@@ -43,13 +47,21 @@ namespace SpaceInvaders
             navinha.PosX = (this.Width / 2) - 50;
             navinha.PosY = this.Height - 100;
 
+
+            inimiguinhos.Add(inimiguinho);
+            inimiguinhos.Add(inimiguinho2);
+
+            Inimigo inimigos1 = new Inimigo(inimiguinhos);
+
             tm.Interval = 15;
 
             tm.Tick += delegate
             {
                 g.Clear(Color.Black);
                 navinha.Colisao(pbNave);
+                inimigos1.Colisao(pbNave);
                 navinha.Draw(pbNave, g);
+                inimigos1.Draw(pbNave, g);
                 pbNave.Refresh();
             };
             tm.Start();

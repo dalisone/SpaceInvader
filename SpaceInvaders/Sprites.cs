@@ -41,8 +41,7 @@ namespace SpaceInvaders
 
         public void Draw(PictureBox Jogo, Graphics g)
         {
-
-            g.DrawImage(image[PosImageAtual], this.PosX, this.PosY, this.SizeX, this.SizeY);
+            g.DrawImage(image[posImageAtual], this.PosX, this.PosY, this.SizeX, this.SizeY);
         }
 
         public void Colisao(PictureBox Jogo)

@@ -121,6 +121,9 @@
   <data name="FOUk4ieXEAQ1vk5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FOUk4ieXEAQ1vk5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inimigo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inimigo-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
