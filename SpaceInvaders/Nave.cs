@@ -23,7 +23,15 @@ namespace SpaceInvaders
         }
         
         
+        public void setSizeX(int sizeX)
+        {
+            this.SizeX = sizeX;
+        }
 
+        public void setSizeY(int sizeY)
+        {
+            this.SizeY = sizeY;
+        }
 
         public void Left()
         {
