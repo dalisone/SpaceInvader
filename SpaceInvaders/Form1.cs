@@ -26,6 +26,16 @@ namespace SpaceInvaders
         Inimigo inimiguinho7 = new Inimigo(480, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_1 });
         Inimigo inimiguinho8 = new Inimigo(560, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_1 });
         Inimigo inimiguinho9 = new Inimigo(640, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_1 });
+        Inimigo inimiguinho10 = new Inimigo(0, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho11 = new Inimigo(80, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho12 = new Inimigo(160, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho13 = new Inimigo(240, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho14 = new Inimigo(320, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho15 = new Inimigo(400, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho16 = new Inimigo(480, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho17 = new Inimigo(560, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho18 = new Inimigo(640, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
+        Inimigo inimiguinho19 = new Inimigo(640, 0, 0, 0, 150, 150, new Image[] { Properties.Resources.inimigo_2 });
 
         public Form1()
         {
@@ -68,6 +78,26 @@ namespace SpaceInvaders
             inimiguinho8.setSizeY(sizeVert);
             inimiguinho9.setSizeX(sizeHor);
             inimiguinho9.setSizeY(sizeVert);
+            inimiguinho10.setSizeX(sizeHor);
+            inimiguinho10.setSizeY(sizeVert);
+            inimiguinho11.setSizeX(sizeHor);
+            inimiguinho11.setSizeY(sizeVert);
+            inimiguinho12.setSizeX(sizeHor);
+            inimiguinho12.setSizeY(sizeVert);
+            inimiguinho13.setSizeX(sizeHor);
+            inimiguinho13.setSizeY(sizeVert);
+            inimiguinho14.setSizeX(sizeHor);
+            inimiguinho14.setSizeY(sizeVert);
+            inimiguinho15.setSizeX(sizeHor);
+            inimiguinho15.setSizeY(sizeVert);
+            inimiguinho16.setSizeX(sizeHor);
+            inimiguinho16.setSizeY(sizeVert);
+            inimiguinho17.setSizeX(sizeHor);
+            inimiguinho17.setSizeY(sizeVert);
+            inimiguinho18.setSizeX(sizeHor);
+            inimiguinho18.setSizeY(sizeVert);
+            inimiguinho19.setSizeX(sizeHor);
+            inimiguinho19.setSizeY(sizeVert);
 
             pbNave.Image = new Bitmap(pbNave.Width, pbNave.Height);
 
@@ -95,6 +125,26 @@ namespace SpaceInvaders
             inimiguinho8.PosY = this.Height - this.Height;
             inimiguinho9.PosX = inimiguinho8.PosX + (this.Width / 18);
             inimiguinho9.PosY = this.Height - this.Height;
+            inimiguinho10.PosX = this.Width - (this.Width - 40);
+            inimiguinho10.PosY = this.Height - (this.Height - 80);
+            inimiguinho11.PosX = inimiguinho.PosX + (this.Width / 18);
+            inimiguinho11.PosY = this.Height - (this.Height - 80);
+            inimiguinho12.PosX = inimiguinho2.PosX + (this.Width / 18);
+            inimiguinho12.PosY = this.Height - (this.Height - 80);
+            inimiguinho13.PosX = inimiguinho3.PosX + (this.Width / 18);
+            inimiguinho13.PosY = this.Height - (this.Height - 80);
+            inimiguinho14.PosX = inimiguinho4.PosX + (this.Width / 18);
+            inimiguinho14.PosY = this.Height - (this.Height - 80);
+            inimiguinho15.PosX = inimiguinho5.PosX + (this.Width / 18);
+            inimiguinho15.PosY = this.Height - (this.Height - 80);
+            inimiguinho16.PosX = inimiguinho6.PosX + (this.Width / 18);
+            inimiguinho16.PosY = this.Height - (this.Height - 80);
+            inimiguinho17.PosX = inimiguinho7.PosX + (this.Width / 18);
+            inimiguinho17.PosY = this.Height - (this.Height - 80);
+            inimiguinho18.PosX = inimiguinho8.PosX + (this.Width / 18);
+            inimiguinho18.PosY = this.Height - (this.Height - 80);
+            inimiguinho19.PosX = inimiguinho8.PosX + (this.Width / 18);
+            inimiguinho19.PosY = this.Height - (this.Height - 80);
 
             inimigays.CreateEnemies();
 
@@ -114,6 +164,16 @@ namespace SpaceInvaders
                 inimiguinho7.Colisao(pbNave);
                 inimiguinho8.Colisao(pbNave);
                 inimiguinho9.Colisao(pbNave);
+                inimiguinho10.Colisao(pbNave);
+                inimiguinho11.Colisao(pbNave);
+                inimiguinho12.Colisao(pbNave);
+                inimiguinho13.Colisao(pbNave);
+                inimiguinho14.Colisao(pbNave);
+                inimiguinho15.Colisao(pbNave);
+                inimiguinho16.Colisao(pbNave);
+                inimiguinho17.Colisao(pbNave);
+                inimiguinho18.Colisao(pbNave);
+                inimiguinho19.Colisao(pbNave);
                 navinha.Draw(pbNave, g);
                 inimiguinho.Draw(pbNave, g);
                 inimiguinho2.Draw(pbNave, g);
@@ -124,6 +184,16 @@ namespace SpaceInvaders
                 inimiguinho7.Draw(pbNave, g);
                 inimiguinho8.Draw(pbNave, g);
                 inimiguinho9.Draw(pbNave, g);
+                inimiguinho10.Draw(pbNave, g);
+                inimiguinho11.Draw(pbNave, g);
+                inimiguinho12.Draw(pbNave, g);
+                inimiguinho13.Draw(pbNave, g);
+                inimiguinho14.Draw(pbNave, g);
+                inimiguinho15.Draw(pbNave, g);
+                inimiguinho16.Draw(pbNave, g);
+                inimiguinho17.Draw(pbNave, g);
+                inimiguinho18.Draw(pbNave, g);
+                inimiguinho19.Draw(pbNave, g);
                 pbNave.Refresh();
 
             };
