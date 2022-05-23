@@ -30,7 +30,10 @@ namespace SpaceInvaders
         public void Colisao(PictureBox pb)
         {
             foreach (var enemy in this)
+            {
                 enemy.Colisao(pb);
+            }
+            
         }
 
         public void Draw(PictureBox pb, Graphics g)

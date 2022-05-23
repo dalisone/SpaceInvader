@@ -69,6 +69,23 @@ namespace SpaceInvaders
                 {
                     coll.Right();
                     coll.Move();
+                    
+                    Console.WriteLine(x);
+
+                    foreach(var inimiguin in coll)
+                    {
+                        if(inimiguin.Colisao(pbNave) = true)
+                        {
+                            Console.WriteLine(x);
+                            x = 1;
+                        }
+                    }
+                }
+
+                if(x == 1)
+                {
+                    coll.Left();
+                    coll.Move();
                 }
 
                 pbNave.Refresh();
