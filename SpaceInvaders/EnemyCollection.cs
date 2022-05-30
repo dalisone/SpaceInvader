@@ -72,7 +72,6 @@ namespace SpaceInvaders
 
             var img = Properties.Resources.inimigo_1;
 
-            int incrementHor =0;
             int incrementVert = 0;
 
             int posHor = 40;
@@ -80,7 +79,7 @@ namespace SpaceInvaders
 
             for(int i = 0; i < qtdLine; i++)
             {
-                incrementHor = 0;
+                int incrementHor = 0;
 
                 if(i == 1)
                 {
@@ -101,7 +100,7 @@ namespace SpaceInvaders
                     coll.Add(posHor + incrementHor, posVer + incrementVert, 0, 0, sizeHor, sizeVert, img);
                     incrementHor += width / 18;
                 }
-                incrementVert += 80;
+                incrementVert += height / 15;
             }
 
             return coll;

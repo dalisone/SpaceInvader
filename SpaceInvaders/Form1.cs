@@ -17,12 +17,14 @@ namespace SpaceInvaders
         List<Enemy> listas = new List<Enemy>();
 
         Nave navinha = new Nave(0, 0, 0, 0, 100, 100);
+        Bullet bulleti = new Bullet(0, 0, 0, 0, 75, 75);
         EnemyCollection coll = null;
 
         public Form1()
         {
             InitializeComponent();
 
+            
             //WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
@@ -52,32 +54,37 @@ namespace SpaceInvaders
             navinha.PosX = (this.Width / 2) - 50;
             navinha.PosY = this.Height - 100;
 
+            bulleti.PosY = navinha.PosY;
 
             tm.Interval = 15;
 
             tm.Tick += delegate
             {
-
+                
                 g.Clear(Color.Black);
                 navinha.Colisao(pbNave);
                 coll.Colisao(pbNave);
+                bulleti.Colisao(pbNave);
 
+
+                bulleti.Draw(pbNave, g);
                 navinha.Draw(pbNave, g);
                 coll.Draw(pbNave, g);
 
-                if(x == 0)
+                bulleti.PosX = navinha.PosX;
+
+                if (x == 0)
                 {
                     coll.Right();
                     coll.Move();
                     
-                    Console.WriteLine(x);
 
                     foreach(var inimiguin in coll)
                     {
-                        if(inimiguin.Colisao(pbNave) = true)
+                        if(inimiguin.PosX == this.Width - coll[0].SizeX - 2)
                         {
-                            Console.WriteLine(x);
                             x = 1;
+                            break;
                         }
                     }
                 }
@@ -86,6 +93,22 @@ namespace SpaceInvaders
                 {
                     coll.Left();
                     coll.Move();
+
+                    foreach (var inimiguin in coll)
+                    {
+                        if (inimiguin.PosX == 40)
+                        {
+                            x = 0;
+                            break;
+                        }
+                    }
+                    if (x == 0)
+                    {
+                        foreach(var inimiguin in coll)
+                        {
+                            inimiguin.PosY += this.Height / 25;
+                        }
+                    }
                 }
 
                 pbNave.Refresh();
@@ -114,6 +137,12 @@ namespace SpaceInvaders
                 navinha.Move();
                 return;
             }
+            
+        }
+
+        private void ReadDalisa(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
