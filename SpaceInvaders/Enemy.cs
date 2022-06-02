@@ -19,6 +19,7 @@ namespace SpaceInvaders
             this.SizeX = SizeX;
             this.SizeY = SizeY;
             this.Image = Image;
+            this.HitBox = HitBox.FromEnemy(this);
         }
 
         public void setSizeX(int sizeX)

@@ -39,7 +39,13 @@ namespace SpaceInvaders
         public void Draw(PictureBox pb, Graphics g)
         {
             foreach (var enemy in this)
+            {
                 enemy.Draw(pb, g);
+                
+            }
+
+            this[0].HitBox.Draw(g);
+                
         }
 
         public void Right()

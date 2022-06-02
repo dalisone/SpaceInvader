@@ -24,6 +24,8 @@ namespace SpaceInvaders
 
         }
 
+        public HitBox HitBox { get; set; }
+
         public int SizeX { get => sizeX; set => sizeX = value; }
         public int SizeY { get => sizeY; set => sizeY = value; }
         public float PosX { get => posX; set => posX = value; }
@@ -35,6 +37,7 @@ namespace SpaceInvaders
 
         public void Move()
         {
+
             posX += velX;
             posY += velY;
         }
@@ -44,7 +47,7 @@ namespace SpaceInvaders
             g.DrawImage(image[posImageAtual], this.PosX, this.PosY, this.SizeX, this.SizeY);
         }
 
-        public void Colisao(PictureBox Jogo)
+        public virtual void Colisao(PictureBox Jogo)
         {
             if(posX <= 0)
             {
@@ -58,6 +61,21 @@ namespace SpaceInvaders
             {
                 posX = Jogo.Width - sizeX;
             }
+        }
+
+        public virtual void CheckCollision(Sprite entity)
+        {
+
+        }
+
+        public virtual void OnCollision(CollisionInfo info, Sprite sprite)
+        {
+
+        }
+
+        public virtual void HitTheWall(int Height, int Width)
+        {
+
         }
     }
 }

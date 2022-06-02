@@ -17,7 +17,6 @@ namespace SpaceInvaders
         List<Enemy> listas = new List<Enemy>();
 
         Nave navinha = new Nave(0, 0, 0, 0, 100, 100);
-        Bullet bulleti = new Bullet(0, 0, 0, 0, 75, 75);
         EnemyCollection coll = null;
 
         public Form1()
@@ -25,7 +24,7 @@ namespace SpaceInvaders
             InitializeComponent();
 
             
-            //WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
 
@@ -37,7 +36,7 @@ namespace SpaceInvaders
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.coll = EnemyCollection.LoadClassic(this.Width, this.Height, 9, 4);
+            
 
             int sizeHor = this.Width / 12;
             int sizeVert = this.Height / 7;
@@ -50,72 +49,19 @@ namespace SpaceInvaders
             Bitmap bmp = pbNave.Image as Bitmap;
             Graphics g = Graphics.FromImage(bmp);
 
+            coll = GameManager.Current.LoadClassic(this.Width, this.Height, 9, 4);
 
             navinha.PosX = (this.Width / 2) - 50;
-            navinha.PosY = this.Height - 100;
-
-            bulleti.PosY = navinha.PosY;
+            navinha.PosY = this.Height - 100; 
 
             tm.Interval = 15;
 
             tm.Tick += delegate
             {
-                
-                g.Clear(Color.Black);
-                navinha.Colisao(pbNave);
-                coll.Colisao(pbNave);
-                bulleti.Colisao(pbNave);
-
-
-                bulleti.Draw(pbNave, g);
-                navinha.Draw(pbNave, g);
-                coll.Draw(pbNave, g);
-
-                bulleti.PosX = navinha.PosX;
-
-                if (x == 0)
-                {
-                    coll.Right();
-                    coll.Move();
-                    
-
-                    foreach(var inimiguin in coll)
-                    {
-                        if(inimiguin.PosX == this.Width - coll[0].SizeX - 2)
-                        {
-                            x = 1;
-                            break;
-                        }
-                    }
-                }
-
-                if(x == 1)
-                {
-                    coll.Left();
-                    coll.Move();
-
-                    foreach (var inimiguin in coll)
-                    {
-                        if (inimiguin.PosX == 40)
-                        {
-                            x = 0;
-                            break;
-                        }
-                    }
-                    if (x == 0)
-                    {
-                        foreach(var inimiguin in coll)
-                        {
-                            inimiguin.PosY += this.Height / 25;
-                        }
-                    }
-                }
-
-                pbNave.Refresh();
-
+                GameManager.Current.Frames(pbNave, g, this.Width, this.Height, navinha, coll);
             };
-            tm.Start();
 
+            tm.Start();
         }
 
         private void ReadKey(object sender, KeyEventArgs e)

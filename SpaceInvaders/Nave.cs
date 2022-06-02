@@ -20,6 +20,7 @@ namespace SpaceInvaders
             this.SizeX = SizeX;
             this.SizeY = SizeY;
             this.Image = new Image[] {Properties.Resources.nave };
+            this.HitBox = HitBox.FromSprite(this);
         }
         
         
