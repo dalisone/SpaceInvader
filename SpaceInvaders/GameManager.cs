@@ -15,6 +15,8 @@ namespace SpaceInvaders
         public static GameManager Current => crr;
 
         int x = 0;
+
+        Timer tmShot = new Timer();
         private GameManager()
         {
 
@@ -28,6 +30,7 @@ namespace SpaceInvaders
 
         public void Frames(PictureBox pbNave, Graphics g, int Width, int Height, Nave navinha, EnemyCollection coll)
         {
+
 
             navinha.Colisao(pbNave);
             coll.Colisao(pbNave);
@@ -52,7 +55,7 @@ namespace SpaceInvaders
             }
 
             navinha.HitBox.Draw(g);
-            
+
 
             if (x == 0)
             {
@@ -138,14 +141,22 @@ namespace SpaceInvaders
             return coll;
         }
 
+        public void Shooting(Nave navinha)
+        {
+
+            float VelY = -10;
+            Bullet shot = new Bullet(navinha.PosX + navinha.SizeX/2, navinha.PosY+navinha.SizeY/2, 0, VelY, 7, 7);
+            Sprites.Add(shot);
+        }
+
+        public void EnemyShot(EnemyCollection enemy, int pos)
+        {
+            float VelYEnemy = 10;
+            Bullet shot2 = new Bullet(enemy[pos].PosX + enemy[pos].SizeX/2, enemy[pos].PosY + enemy[pos].SizeY / 2, 0, VelYEnemy, 7, 7);
+            Sprites.Add(shot2);
+        }
+
         public List<Sprite> Sprites { get; private set; } = new List<Sprite>();
 
-        //public void Shooting(Spaceship spaceship)
-        //{
-        //    float VelX = (float)(2f * Math.Sin(Math.PI * spaceship.RotationAngle / 180));
-        //    float VelY = (float)(-2f * Math.Cos(Math.PI * spaceship.RotationAngle / 180));
-        //    Shots shot = new Shots(spaceship.PosX + spaceship.SizeX / 2, spaceship.PosY + spaceship.SizeY / 2, VelX * 15, VelY * 15, 7, 7);
-        //    Sprites.Add(shot);
-        //}
     }
 }

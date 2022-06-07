@@ -3,8 +3,8 @@ using System.Drawing;
 
 public enum EntityType
 {
-    Spaceship,
-    Asteroid,
+    Navinha,
+    Inimigo,
     Shot
 }
 

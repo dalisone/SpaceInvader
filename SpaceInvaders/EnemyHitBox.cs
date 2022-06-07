@@ -13,11 +13,11 @@ namespace SpaceInvaders
         public override PointF[] Points => new PointF[]
         {
             
-            new PointF(enemy.PosX+80  , enemy.PosY +100  ),
-            new PointF(enemy.PosX+80 + enemy.SizeX /3, enemy.PosY +100  ),
-            new PointF(enemy.PosX+80 + enemy.SizeX/3, enemy.PosY  ),
-            new PointF(enemy.PosX+80, enemy.PosY  +100 ),
-            new PointF(enemy.PosX+80, enemy.PosY+100   ),
+            new PointF(enemy.PosX+55  , enemy.PosY+110  ),
+            new PointF(enemy.PosX+55 + enemy.SizeX /3, enemy.PosY +110  ),
+            new PointF(enemy.PosX+55 + enemy.SizeX/3, enemy.PosY+60  ),
+            new PointF(enemy.PosX+55, enemy.PosY  +60 ),
+            new PointF(enemy.PosX+55, enemy.PosY +60  ),
         };
     }
 }

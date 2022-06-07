@@ -42,7 +42,7 @@ namespace SpaceInvaders
             posY += velY;
         }
 
-        public void Draw(PictureBox Jogo, Graphics g)
+        public virtual void Draw(PictureBox Jogo, Graphics g)
         {
             g.DrawImage(image[posImageAtual], this.PosX, this.PosY, this.SizeX, this.SizeY);
         }
@@ -65,12 +65,28 @@ namespace SpaceInvaders
 
         public virtual void CheckCollision(Sprite entity)
         {
-
+            float dx = entity.posX - this.posX;
+            float dy = entity.posY - this.posY;
+            if (dx * dx + dy * dy > 100 * 100)
+                return;
+            var info = HitBox.IsColliding(entity.HitBox);
+            if (info.IsColliding)
+            {
+                if (entity is Enemy)
+                {
+                    info.Type = EntityType.Inimigo;
+                }
+                else if (entity is Bullet)
+                {
+                    info.Type = EntityType.Shot;
+                }
+                OnCollision(info, entity);
+            }
         }
 
         public virtual void OnCollision(CollisionInfo info, Sprite sprite)
         {
-
+            
         }
 
         public virtual void HitTheWall(int Height, int Width)

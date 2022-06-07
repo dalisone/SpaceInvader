@@ -41,10 +41,10 @@ namespace SpaceInvaders
             foreach (var enemy in this)
             {
                 enemy.Draw(pb, g);
-                
+                enemy.HitBox.Draw(g);
             }
 
-            this[0].HitBox.Draw(g);
+            
                 
         }
 

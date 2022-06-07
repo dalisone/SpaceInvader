@@ -14,6 +14,7 @@ namespace SpaceInvaders
     {
         int x = 0;
         Timer tm = new Timer();
+        Timer tmShot = new Timer();
         List<Enemy> listas = new List<Enemy>();
 
         Nave navinha = new Nave(0, 0, 0, 0, 100, 100);
@@ -55,13 +56,23 @@ namespace SpaceInvaders
             navinha.PosY = this.Height - 100; 
 
             tm.Interval = 15;
+            tmShot.Interval = 1200;
 
             tm.Tick += delegate
             {
                 GameManager.Current.Frames(pbNave, g, this.Width, this.Height, navinha, coll);
             };
 
+            tmShot.Tick += delegate
+            {
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int pos = rand.Next(1, 35);
+
+                GameManager.Current.EnemyShot(coll, pos);
+            };
+
             tm.Start();
+            tmShot.Start();
         }
 
         private void ReadKey(object sender, KeyEventArgs e)
@@ -83,12 +94,21 @@ namespace SpaceInvaders
                 navinha.Move();
                 return;
             }
-            
+            if (e.KeyCode == Keys.Space)
+            {
+                GameManager.Current.Shooting(navinha);
+            }
+
         }
 
         private void ReadDalisa(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void ReadKey2(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

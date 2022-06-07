@@ -18,12 +18,12 @@ namespace SpaceInvaders
             this.VelY = VelY;
             this.SizeX = SizeX;
             this.SizeY = SizeY;
-            this.Image = new Image[] { Properties.Resources.tiro };
+            this.HitBox = HitBox.FromSprite(this);
         }
 
-        public void Shot()
+        public override void Draw(PictureBox Jogo, Graphics g)
         {
-            VelY = -5;
+            g.FillEllipse(Brushes.White, this.PosX, this.PosY, 10, 10);
         }
     }
 }
