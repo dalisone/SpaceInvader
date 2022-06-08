@@ -66,7 +66,7 @@ namespace SpaceInvaders
             tmShot.Tick += delegate
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
-                int pos = rand.Next(1, 35);
+                int pos = rand.Next(0, coll.Count);
 
                 GameManager.Current.EnemyShot(coll, pos);
             };

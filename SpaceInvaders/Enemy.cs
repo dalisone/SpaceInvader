@@ -10,6 +10,9 @@ namespace SpaceInvaders
 {
     public class Enemy : Sprite
     {
+
+        public bool Hit { get; set; } = false;
+
         public Enemy(float PosX, float PosY, float VelX, float VelY, int SizeX, int SizeY, params Image[] Image)
         {
             this.PosX = PosX;
@@ -45,6 +48,35 @@ namespace SpaceInvaders
         public void Left()
         {
             VelX = -5;
+        }
+
+        public override void CheckCollision(Sprite entity)
+        {
+            float dx = entity.PosX - this.PosX;
+            float dy = entity.PosY - this.PosY;
+            if (dx * dx + dy * dy > 100 * 100)
+                return;
+            var info = HitBox.IsColliding(entity.HitBox);
+            if (info.IsColliding)
+            {
+                if (entity is Enemy)
+                {
+                    info.Type = EntityType.Navinha;
+                }
+                else if (entity is Bullet)
+                { 
+                    info.Type = EntityType.Shot;
+                }
+                OnCollision(info, entity);
+            }
+        }
+
+        public override void OnCollision(CollisionInfo info, Sprite sprite)
+        {
+            if (info.Type == EntityType.Shot)
+            {
+                Hit = true;
+            }
         }
     }
 }

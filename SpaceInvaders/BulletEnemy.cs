@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace SpaceInvaders
 {
-    public class Bullet : Sprite
+    public class BulletEnemy : Sprite
     {
 
-        public bool ShotHit { get; set; } = false;
-        public Bullet(float PosX, float PosY, float VelX, float VelY, int SizeX, int SizeY)
+        public bool EnemyShotHit { get; set; } = false;
+        public BulletEnemy(float PosX, float PosY, float VelX, float VelY, int SizeX, int SizeY)
         {
             this.PosX = PosX;
             this.PosY = PosY;
@@ -37,13 +37,25 @@ namespace SpaceInvaders
             var info = entity.HitBox.IsColliding(HitBox);
             if (info.IsColliding)
             {
-                ShotHit = true;
+                if (entity is Nave)
+                {
+                    info.Type = EntityType.Navinha;
+                }
+
+                if (entity is Enemy)
+                {
+                    info.Type = EntityType.Inimigo;
+                }
+                OnCollision(info, entity);
             }
         }
 
         public override void OnCollision(CollisionInfo info, Sprite sprite)
         {
-            
+            if(info.Type == EntityType.Navinha)
+            {
+                this.EnemyShotHit = true;
+            }
         }
     }
 }

@@ -56,6 +56,57 @@ namespace SpaceInvaders
 
             navinha.HitBox.Draw(g);
 
+            for(int i = 0; i < Sprites.Count; i++) 
+            { 
+                if(Sprites[i] is Bullet bullet && bullet.ShotHit)
+                {
+                    Sprites.Remove(Sprites[i]);
+                    i--;
+                }
+            }
+
+            for (int i = 0; i < Sprites.Count; i++)
+            {
+                if (Sprites[i] is BulletEnemy bulletEnemy && bulletEnemy.EnemyShotHit)
+                {
+                    Sprites.Remove(Sprites[i]);
+                    i--;
+                }
+            }
+
+            for (int i = 0; i < coll.Count; i++)
+            {
+                if (coll[i].Hit)
+                {
+                    coll.Remove(coll[i]);
+                    i--;
+                }
+            }
+
+            for (int i = 0; i < coll.Count; i++)
+            {
+                for(int j = 0; j < Sprites.Count; j++)
+                {
+                    coll[i].CheckCollision(Sprites[j]);
+                }
+            }
+
+            for (int i = 0; i < Sprites.Count; i++)
+            {
+                for (int j = 0; j < coll.Count; j++)
+                {
+                    Sprites[i].CheckCollision(coll[j]);
+                }
+            }
+
+            for (int i = 0; i < coll.Count; i++)
+            {
+                navinha.CheckCollision(coll[i]);
+                for (int j = 0; j < Sprites.Count; j++)
+                {
+                    navinha.CheckCollision(Sprites[j]);
+                }
+            }
 
             if (x == 0)
             {
@@ -152,9 +203,11 @@ namespace SpaceInvaders
         public void EnemyShot(EnemyCollection enemy, int pos)
         {
             float VelYEnemy = 10;
-            Bullet shot2 = new Bullet(enemy[pos].PosX + enemy[pos].SizeX/2, enemy[pos].PosY + enemy[pos].SizeY / 2, 0, VelYEnemy, 7, 7);
+            BulletEnemy shot2 = new BulletEnemy(enemy[pos].PosX + enemy[pos].SizeX / 2, enemy[pos].PosY + enemy[pos].SizeY / 2, 0, VelYEnemy, 7, 7);
             Sprites.Add(shot2);
         }
+
+
 
         public List<Sprite> Sprites { get; private set; } = new List<Sprite>();
 

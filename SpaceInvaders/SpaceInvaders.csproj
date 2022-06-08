@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bullet.cs" />
+    <Compile Include="BulletEnemy.cs" />
     <Compile Include="CollissionInfo.cs" />
     <Compile Include="EnemyCollection.cs" />
     <Compile Include="EnemyHitBox.cs" />

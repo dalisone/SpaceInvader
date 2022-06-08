@@ -20,3 +20,14 @@ E:\dabia\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.GenerateResource.cache
 E:\dabia\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
 E:\dabia\SpaceInvaders\obj\Debug\SpaceInvaders.exe
 E:\dabia\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.AssemblyReference.cache
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.SuggestedBindingRedirects.cache
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.Form1.resources
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.Properties.Resources.resources
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.GenerateResource.cache
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\Aluno\Source\Repos\SpaceInvader\SpaceInvaders\obj\Debug\SpaceInvaders.pdb

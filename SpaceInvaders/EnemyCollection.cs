@@ -44,8 +44,6 @@ namespace SpaceInvaders
                 enemy.HitBox.Draw(g);
             }
 
-            
-                
         }
 
         public void Right()
