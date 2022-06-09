@@ -5,13 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SpaceInvaders
 {
     public class Nave : Sprite
     {
 
-        int vidas = 3;
+
+        SoundPlayer death = new SoundPlayer(Properties.Resources.slender__mp3cut_net_);
+        public int Lives { get; set; } = 3;
+        public bool WasKilled { get; set; } = false;
         public Nave(float PosX, float PosY, float VelX, float VelY, int SizeX, int SizeY)
         {
             this.PosX = PosX;
@@ -39,7 +43,6 @@ namespace SpaceInvaders
         {
             VelX = -15;
         }
-
         public void Right()
         {
             VelX = 15;
@@ -63,6 +66,7 @@ namespace SpaceInvaders
                     info.Type = EntityType.Shot;
                 }
                 OnCollision(info, entity);
+                WasKilled = false;
             }
         }
 
@@ -70,20 +74,31 @@ namespace SpaceInvaders
         {
             if (info.Type == EntityType.Shot || info.Type == EntityType.Inimigo)
             {
-                this.LoseLife();
+                if(Lives > 0 && !WasKilled)
+                {
+                    LoseLife();
+                }
+
             }
         }
 
         public void LoseLife()
         {
-            if (vidas == 0)
-            {
-                Application.Exit();
-            }
+            Lives--;
 
-            vidas--;
+            if(Lives == 0)
+            {
+                WasKilled = true;
+            }
             return;
         }
 
+        public void Death()
+        {
+            if (Lives == 0)
+            {
+                death.Play();
+            }
+        }
     }
 }

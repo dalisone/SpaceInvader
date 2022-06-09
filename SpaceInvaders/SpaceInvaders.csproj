@@ -116,5 +116,20 @@
   <ItemGroup>
     <None Include="Resources\canga.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiro_bicho.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiro.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jeff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slender.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slender %28mp3cut.net%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

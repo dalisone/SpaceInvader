@@ -56,6 +56,10 @@ namespace SpaceInvaders
             {
                 this.EnemyShotHit = true;
             }
+            if(info.Type == EntityType.Inimigo)
+            {
+                this.EnemyShotHit = false;
+            }
         }
     }
 }

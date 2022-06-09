@@ -15,6 +15,7 @@ namespace SpaceInvaders
         int x = 0;
         Timer tm = new Timer();
         Timer tmShot = new Timer();
+        Timer tmSpace = new Timer();
         List<Enemy> listas = new List<Enemy>();
 
         Nave navinha = new Nave(0, 0, 0, 0, 100, 100);
@@ -85,18 +86,29 @@ namespace SpaceInvaders
             if (e.KeyCode == Keys.Right)
             {
                 navinha.Right();
-                navinha.Move();
                 return;
             }
             if (e.KeyCode == Keys.Left)
             {
                 navinha.Left();
-                navinha.Move();
                 return;
             }
             if (e.KeyCode == Keys.Space)
             {
+                //tmSpace.Interval = 100;
+                //Action a = () => GameManager.Current.Shooting(navinha);
+                //tm.Tick += delegate
+                //{
+                //    Invoke(a);
+
+                //    tmSpace.Stop();
+                //};
+
+                //tmSpace.Start();
+
+                //Task shotinho = new Task(
                 GameManager.Current.Shooting(navinha);
+                //shotinho.Wait(100);
             }
 
         }

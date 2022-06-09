@@ -41,7 +41,7 @@ namespace SpaceInvaders
             foreach (var enemy in this)
             {
                 enemy.Draw(pb, g);
-                enemy.HitBox.Draw(g);
+                //enemy.HitBox.Draw(g);
             }
 
         }
@@ -49,13 +49,13 @@ namespace SpaceInvaders
         public void Right()
         {
             foreach (var enemy in this)
-                enemy.VelX = 5;
+                enemy.VelX = 7;
         }
 
         public void Left()
         {
             foreach (var enemy in this)
-                enemy.VelX = -5;
+                enemy.VelX = -7;
         }
 
         public void Move()
